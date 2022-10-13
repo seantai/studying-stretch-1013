@@ -41,14 +41,14 @@ class App {
         this.targetC = new BufferManager(this.renderer, { width: this.width, height: this.height });
         this.renderer.setSize(this.width, this.height);
         document.body.appendChild(this.renderer.domElement);
-        this.renderer.domElement.addEventListener('mousedown', () => {
+        this.renderer.domElement.addEventListener('pointerdown', () => {
             this.mousePosition.setZ(1);
-            this.counter = 0;
+            // this.counter = 0;
         });
-        this.renderer.domElement.addEventListener('mouseup', () => {
+        this.renderer.domElement.addEventListener('pointerup', () => {
             this.mousePosition.setZ(0);
         });
-        this.renderer.domElement.addEventListener('mousemove', event => {
+        this.renderer.domElement.addEventListener('pointermove', event => {
             this.mousePosition.setX(event.clientX);
             this.mousePosition.setY(this.height - event.clientY);
         });
